@@ -63,7 +63,7 @@ class FrontController extends Controller
                         'product_rates' => function($q) {
                             $q->where('status', 2);
                         }
-                    ])->where('status', 1)->orderBy('price', 'asc');
+                    ])->where('status', 1)->orderByRaw('CASE WHEN price = 0 THEN base_price ELSE price END ASC');
                 }
             ])
             ->has('products')
