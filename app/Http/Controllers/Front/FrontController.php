@@ -63,7 +63,7 @@ class FrontController extends Controller
                         'product_rates' => function($q) {
                             $q->where('status', 2);
                         }
-                    ])->where('status', 1)->inRandomOrder();
+                    ])->where('status', 1)->orderBy('price', 'asc');
                 }
             ])
             ->has('products')
@@ -71,7 +71,7 @@ class FrontController extends Controller
             ->where('show_home_page', 1)
             ->where('order_number', '!=', 1)
             ->orderBy('order_number')->get()->map(function ($query) {
-                $query->setRelation('products', $query->products->where('status',1)->take(20));
+                $query->setRelation('products', $query->products->where('status',1)->take(16));
                 return $query;
             });
 

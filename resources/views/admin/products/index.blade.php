@@ -122,7 +122,7 @@
                 {
                     data: 'image', title: "Hình ảnh", orderable: false, className: "text-center",
                     render: function (data) {
-                        return `<img src="${data.path}" style="max-width: 55px !important">`;
+                        return `<img src="${data?.path}" style="max-width: 55px !important">`;
                     }
                 },
                 {data: 'name', title: 'Tên'},
