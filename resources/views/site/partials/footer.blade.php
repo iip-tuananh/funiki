@@ -58,16 +58,16 @@
                     </h4>
                     <ul class="list-menu toggle-mn hidden-mob">
                         <li class="li_menu">
-                            <a class="no-a" href="tel:1900800111" title="1900 800 111">
-                                Kinh doanh: <span>1900 800 111</span></a>
+                            <a class="no-a" href="tel:{{str_replace(' ', '', $config->hotline)}}" title="{{$config->hotline}}">
+                                Kinh doanh: <span>{{$config->hotline}}</span></a>
                         </li>
                         <li class="li_menu">
-                            <a class="no-a" href="tel:1900800222" title="1900 800 222">
-                                Bảo hành: <span>1900 800 222</span></a>
+                            <a class="no-a" href="tel:{{str_replace(' ', '', $config->hotline)}}" title="{{$config->hotline}}">
+                                Bảo hành: <span>{{$config->hotline}}</span></a>
                         </li>
                         <li class="li_menu">
-                            <a class="no-a" href="tel:1900800333" title="1900 800 333">
-                                Khiếu nại: <span>1900 800 333</span></a>
+                            <a class="no-a" href="tel:{{str_replace(' ', '', $config->hotline)}}" title="{{$config->hotline}}">
+                                Khiếu nại: <span>{{$config->hotline}}</span></a>
                         </li>
                         <li class="li_menu">
                             <a href="{{route('front.contact-us')}}" title="Liên hệ">Liên hệ</a>

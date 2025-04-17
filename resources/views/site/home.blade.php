@@ -331,7 +331,7 @@
             </div>
         </section>
     @endforeach
-    <section class="section_policy container">
+    {{-- <section class="section_policy container">
         <div class="row promo-box">
             <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                 <div class="promo-item">
@@ -375,7 +375,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
 @push('script')
 @endpush
