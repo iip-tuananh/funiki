@@ -3,7 +3,7 @@
     {{ $product->name }}
 @endsection
 @section('description')
-    {{ strip_tags($product->intro) }}
+    {!! strip_tags($product->intro) !!}
 @endsection
 @section('image')
     {{ $product->image ? $product->image->path : $product->galleries[0]->image->path }}

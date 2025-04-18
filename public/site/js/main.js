@@ -387,39 +387,22 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function(){
-	$('.header_tim_kiem input[type="text"], .search-mobile input[type="text"]').bind('keyup change', function(e){
-		let term = $(this).val().trim();
-		let data = '';
-		var resultbox = '';
-		if(term.length > 1) {
-			$('.search-title span').html('Tìm Kiếm: '+$(this).val()+'');
-			$('.title_no_mis').html('Đề xuất tìm kiếm');
-			$('.search-list').addClass('no-mis');
-			async function goawaySearch() {
-				setTimeout(function(){
-					var sizeData = Object.keys(data).length;
-					if(sizeData > 0) {
-						Object.keys(data).forEach(function(key) {
-							if (data[key].compare_price != 0 ) {
-								resultbox += `<div class="product-smart"><div class="product-info"><a class="product-name" href="${data[key].url}" title="${data[key].name}">${data[key].name}</a><span class="price">${data[key].price}</span><span class="compare-price">${data[key].compare_price}</span></div><a class="image_thumb" href="${data[key].url}" title="${data[key].name}"><img width="480" height="480" class="lazyload loaded" src="${data[key].image}" data-src="${data[key].image}" alt="${data[key].name}"></a></div>`
-							} else {
-								resultbox += `<div class="product-smart"><div class="product-info"><a class="product-name" href="${data[key].url}" title="${data[key].name}">${data[key].name}</a><span class="price">${data[key].price}</span></div><a class="image_thumb" href="${data[key].url}" title="${data[key].name}"><img width="480" height="480" class="lazyload loaded" src="${data[key].image}" data-src="${data[key].image}" alt="${data[key].name}"></a></div>`
-							}
-						});
-						resultbox +=`<a href="/search?query=${term}&type=product" class="see-all-search" title="Xem tất cả">Xem tất cả</a>`
-						$('.list-search').html(resultbox);
-					} else {
-						$('.list-search').html('<div class="not-pro">Không có thấy kết quả tìm kiếm</div>');
-					}
-				}, 200);
-			}
-			goawaySearch();
-		}else {
-			$('.search-title span').html('Vui Lòng Nhập Từ Khóa Vào Ô Tìm Kiếm');
-										 $('.title_no_mis').html('ĐỪNG BỎ LỠ');
-			$('.list-search').html('');
-			$('.search-list').removeClass('no-mis');
-		}
-	});
-});
+// $(document).ready(function(){
+// 	$('.header_tim_kiem input[type="text"], .search-mobile input[type="text"]').bind('keyup change', function(e){
+//         console.log(123456);
+
+// 		let term = $(this).val().trim();
+// 		let data = '';
+// 		var resultbox = '';
+// 		if(term.length > 1) {
+// 			$('.search-title span').html('Tìm Kiếm: '+$(this).val()+'');
+// 			$('.title_no_mis').html('Đề xuất tìm kiếm');
+// 			$('.search-list').addClass('no-mis');
+// 		}else {
+// 			$('.search-title span').html('Vui Lòng Nhập Từ Khóa Vào Ô Tìm Kiếm');
+// 										 $('.title_no_mis').html('ĐỪNG BỎ LỠ');
+// 			$('.list-search').html('');
+// 			$('.search-list').removeClass('no-mis');
+// 		}
+// 	});
+// });

@@ -182,7 +182,7 @@
                                                         </ul>
                                                     </div>
                                                     <div class="col-lg-3 mega-banner">
-                                                        <a href="/collections/all" title="Banner"
+                                                        <a href="javascript:void(0);" title="Banner"
                                                             class="banner-effect">
                                                             <img width="451" height="500"
                                                                 src="//bizweb.dktcdn.net/100/488/001/themes/910675/assets/mega-1-image-2.jpg?1740037266911"
@@ -194,6 +194,25 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <ul class="dropdown-menu mega-drop">
+                                                @foreach ($category->childs as $child)
+                                                <li class="dropdown-submenu nav-item-lv2 has-childs2">
+                                                    <a class="nav-link" href="{{ route('front.show-product-category', $child->slug) }}" title="{{ $child->name }}">
+                                                        {{ $child->name }}
+                                                        <img width="32" height="32" src="//bizweb.dktcdn.net/100/488/001/themes/910675/assets/down-arrow.png?1740037266911" alt="icon"></a>
+                                                    @if ($child->childs->count() > 0)
+                                                        <i class="open_mnu down_icon"></i>
+                                                    <ul class="dropdown-menu">
+                                                        @foreach ($child->childs as $child2)
+                                                        <li class="nav-item-lv3">
+                                                            <a class="nav-link" href="{{ route('front.show-product-category', $child2->slug) }}" title="{{ $child2->name }}">{{ $child2->name }}</a>
+                                                        </li>
+                                                        @endforeach
+                                                    </ul>
+                                                    @endif
+                                                </li>
+                                                @endforeach
+                                            </ul>
                                         @endif
                                     </li>
                                 @endforeach
