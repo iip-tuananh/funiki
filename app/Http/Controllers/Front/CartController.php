@@ -131,7 +131,7 @@ class CartController extends Controller
                 'customer_phone.regex' => 'Số điện thoại không đúng định dạng',
                 'customer_address.required' => 'Vui lòng nhập địa chỉ',
                 'payment_method.required' => 'Vui lòng chọn phương thức thanh toán',
-                'customer_email.required' => 'Vui lòng nhập email',
+                // 'customer_email.required' => 'Vui lòng nhập email',
             ];
 
             $validate = Validator::make(
@@ -140,7 +140,7 @@ class CartController extends Controller
                     'customer_name' => 'required',
                     'customer_phone' => 'required|regex:/^(0)[0-9]{9,11}$/',
                     'customer_address' => 'required',
-                    'customer_email' => 'required|email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+                    // 'customer_email' => 'required|email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
                     'customer_province' => 'required',
                     'customer_district' => 'required',
                     'customer_ward' => 'required',
@@ -171,7 +171,7 @@ class CartController extends Controller
             $order = Order::query()->create([
                 'customer_name' => $request->customer_name,
                 'customer_phone' => $request->customer_phone,
-                'customer_email' => $request->customer_email,
+                'customer_email' => $request->customer_email ?? null,
                 'customer_address' => $customer_address,
                 'customer_required' => $request->customer_required,
                 'discount_code' => $request->discount_code,
