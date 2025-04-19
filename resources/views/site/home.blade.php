@@ -160,7 +160,7 @@
                                 </h2>
                             </div>
                             <div class="col-12 col-sm-12 col-lg-9">
-                                <div class="swiper_fade_text swiper-container">
+                                {{-- <div class="swiper_fade_text swiper-container">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide text-center">
                                             <a class="modal-open text-white line_1" href="javascript:void(0)"
@@ -175,7 +175,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
