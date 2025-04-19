@@ -224,15 +224,15 @@ class CartController extends Controller
             $config = Config::query()->first();
 
             // gửi mail thông báo có đơn hàng mới cho admin
-            $users = User::query()->where('type', 1)->where('status', 1)->get();
-            // Mail::to('nguyentienvu4897@gmail.com')->send(new NewOrder($order, $config, 'admin'));
+            // $users = User::query()->where('type', 1)->where('status', 1)->get();
+            Mail::to('nguyentienvu4897@gmail.com')->send(new NewOrder($order, $config, 'admin'));
 
 
-            if($users->count()) {
-                foreach ($users as $user) {
-                    Mail::to($user->email)->send(new NewOrder($order, $config, 'admin'));
-                }
-            }
+            // if($users->count()) {
+            //     foreach ($users as $user) {
+            //         Mail::to($user->email)->send(new NewOrder($order, $config, 'admin'));
+            //     }
+            // }
 
             DB::commit();
             return Response::json(['success' => true, 'order_code' => $order->code, 'message' => 'Đặt hàng thành công']);
